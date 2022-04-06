@@ -1,10 +1,5 @@
-var topInit1
-var topInit2
-var topInit3
+var topScore = 0
 var time = 0
-var playerInit
-var playerTime
-var endState
 var questionOneText = document.querySelector("#questionOne")
 var questionTwoText = document.querySelector("#questionTwo")
 var questionThreeText = document.querySelector("#questionThree")
@@ -76,3 +71,22 @@ function wrong(x) {
         gameBox3.style.display = "none";
         clearInterval(startTimer);
     })
+
+var score = time
+var init = document.getElementById("#yourInit")
+var finalScore = document.querySelector("#yourScore")
+
+
+topScore
+var topInit
+var topRank = document.querySelector("#topScore")
+
+if (score > topScore) {
+    topScore = score
+    init = topInit
+}
+
+document.getElementById("#yourInit").onsubmit = function() {
+    topRank.textContent = `Best Score: ${topInit}: ${topScore}`
+    finalScore.textContent = `Your Score: ${init}: ${score} seconds`
+}
